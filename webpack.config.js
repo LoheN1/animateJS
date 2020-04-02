@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const MinCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
@@ -17,36 +17,46 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use:  {
                     loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
                 }
             },
             {
-                test: /\.scss$/,
+                test: /\.sc|ass$/,
                 use: [
                     {
-                        loader: MinCssExtractPlugin.loader,
-                        options: {
-                            publicPath: '/dist/',
-                        },
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     {
                         loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            config: {
+                              ctx: {
+                                cssnano: {},
+                                autoprefixer: {}
+                              }
+                            }
+                          }
                     },
                     {
                         loader: 'sass-loader',
+                        options: {
+                            sourceMap: true // il est indispensable d'activer les sourcemaps pour que postcss fonctionne correctement
+                        }
                     },
-                    {
-                        loader: 'postcss-loader'
-                    }
                 ]
             }
         ]
     },
     plugins: [
-        new MinCssExtractPlugin({
-            filename: 'style.css'
+        new MiniCssExtractPlugin({
+            filename: "styles.css",
+            chunkFilename: '[id].css',
         })
     ],
 }

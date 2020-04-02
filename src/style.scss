@@ -1,6 +1,7 @@
-$test: red;
+$red : #ff00ff;
 
 body {
-    background-color: $test;
+    background-color: $red;
     font-size: 1rem;
+    color: $red;
 }
