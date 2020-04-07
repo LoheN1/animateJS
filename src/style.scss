@@ -1,7 +1,4 @@
-$red : #ff00ff;
+@import '~bootstrap/scss/bootstrap';
 
-body {
-    background-color: $red;
-    font-size: 1rem;
-    color: $red;
-}
+@import './assets/scss/variables';
+@import './components/components';

@@ -14,10 +14,17 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use:  {
-                    loader: "babel-loader",
+                enforce: "pre",
+                loader: "eslint-loader",
+                exclude: /node_modules/,
+                options: {
+                  emitWarning: true,
                 }
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
             },
             {
                 test: /\.sc|ass$/,

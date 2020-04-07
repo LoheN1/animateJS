@@ -1,5 +1,3 @@
-import css from './style.scss';
+import './style.scss';
 
-setTimeout(() => {
-  console.log("Je test pour tester !")
-}, 500);
+console.log('test');

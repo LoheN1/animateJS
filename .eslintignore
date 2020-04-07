@@ -1,0 +1,3 @@
+*.config.js
+src/index.js
+nodes_modules/
