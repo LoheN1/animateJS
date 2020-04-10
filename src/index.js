@@ -1,3 +1,3 @@
 import './style.scss';
 
-console.log('test');
+import toast from './components/toast/toast';
