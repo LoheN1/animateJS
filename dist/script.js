@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "C:\\workspace\\animateJS/dist";
+/******/ 	__webpack_require__.p = "/home/lohe/workspace/animateJS/dist";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("/* eslint linebreak-style: [\"error\", \"windows\"] */\nconst item = {\n  value: 5,\n\n  addValue(value) {\n    return item.value + value;\n  }\n\n};\nconsole.log(item);\n\n//# sourceURL=webpack:///./src/components/toast/toast.js?");
+eval("const item = {\n  value: 5,\n\n  addValue(value) {\n    return item.value + value;\n  }\n\n};\nconsole.log(item);\n\n//# sourceURL=webpack:///./src/components/toast/toast.js?");
 
 /***/ }),
 
